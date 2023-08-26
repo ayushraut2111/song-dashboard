@@ -2,7 +2,6 @@ from rest_framework.viewsets import ModelViewSet
 from .models import songs
 from .serializers import SongSerializer
 from rest_framework.response import Response
-from mutagen.wave import WAVE
 import mutagen  # using mutagen to get the size of a audio file
 
 class song_api(ModelViewSet):
