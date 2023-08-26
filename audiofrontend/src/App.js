@@ -12,25 +12,25 @@ function App() {
 
 function Audio()
 {
-  const [aud,setAud]=useState('')
-  const [msg,setMsg]=useState('')
-  console.log(aud)
-  console.log(msg)
-let url="http://127.0.0.1:8000/song/"
+  const [aud,setAud]=useState('');    {/* this hook is used to save the audio file */}
+  const [msg,setMsg]=useState('') ;   {/* this hook is used to save any msg comming from the backend */}
+  console.log(aud);
+  console.log(msg);
+let url="http://127.0.0.1:8000/song/";
 {/* this is a post function and with the help of this function we will post the data to the database */}
 
 let post=async()=>{
   let formdata = new FormData();
-  formdata.append('audio',aud)
-  console.log(formdata)
+  formdata.append('audio',aud);
+  console.log(formdata);
   let x=await fetch(url,{
     method:"post",
     body:formdata,
-  })
-  let y= await x.json()
-  setMsg(y)
+  });
+  let y= await x.json();
+  setMsg(y);
 {/* after snding audio file to the database we are fetching the updated data from the database */}
-  get()      
+  get();   
 }
 
 let fn=(e)=>{
@@ -38,16 +38,16 @@ let fn=(e)=>{
   post();
 }
 
-const [dt,setDt]=useState([])
+const [dt,setDt]=useState([]);  {/* this hook will save all the data fetched from the backend to be viewed in the frontend */}
 {/* get function is used to fetch all the audio and their metadata from database */}
 const get=async ()=>{          
-    let f=await fetch(url)
-    let data=await f.json()
+    let f=await fetch(url);
+    let data=await f.json();
 {/* after fetching all the data from database it is saving the data in dt variable with the help of setDt hook */}
-    setDt(data)    
+    setDt(data)    ;
 
   }
-  console.log(dt)
+  console.log(dt);
 
 useEffect(()=>{get()},[])
   return(
@@ -67,7 +67,7 @@ useEffect(()=>{get()},[])
             <h3>{name}---{date}--{duration}---{size}---{extension}</h3>
             <audio src={audio} controls/>
             </>
-          )
+          );
         })
       }
     </div>
