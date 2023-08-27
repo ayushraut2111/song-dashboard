@@ -20,4 +20,5 @@ class songs(models.Model):
 def auto_delete_file_on_delete(sender, instance, **kwargs):
     if instance.audio:
         if os.path.isfile(instance.audio.path):
+            # print(os.path.isfile(instance.audio.path))
             os.remove(instance.audio.path)
