@@ -14,6 +14,8 @@ EXPLANATION OF THE PROJECT :-
 
 7. For frontend i have used react and then making get and post request with the help of javascript fetch api. 
 
+8. Django rest framework is used for making api 
+
 
 TO FIND THE CODES OF FRONTEND AND BACKEND FOLLOW THESE :-
 
