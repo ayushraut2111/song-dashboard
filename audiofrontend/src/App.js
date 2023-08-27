@@ -49,8 +49,17 @@ const get=async ()=>{
   }
   console.log(dt);
 
-useEffect(()=>{get()},[])
-  return(
+useEffect(()=>{get()},[]) ;   {/* we have passed get function in the useeffect hook so with the help of this at the time of startup it is fetching all the data initilally */}
+
+const dlt=async(id)=>{
+  let url=`http://127.0.0.1:8000/song/${id}/`;
+    await fetch(url,{
+      method:"delete"
+    })
+    get()
+
+  }
+return(
     <>
     <h1>hello</h1>
     <div className="frm">
@@ -61,10 +70,13 @@ useEffect(()=>{get()},[])
       </form>
       {
         dt.map((data)=>{
-          const {name,date,duration,size,extension,audio}=data
+          const {id,name,date,duration,size,extension,audio}=data
           return(
             <>
-            <h3>{name}---{date}--{duration}---{size}---{extension}</h3>
+            <h3>{name}   ---  {date}  --  {duration} minutes   ---    {size}mb   ---   {extension}</h3>
+            <button type="button" onClick={()=>dlt(id)}>Delete</button>
+            <br />
+            <br />
             <audio src={audio} controls/>
             </>
           );
