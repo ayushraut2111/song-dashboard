@@ -4,7 +4,7 @@ import {useState,useEffect} from 'react'
 function App() {
   return (
     <div className="App">
-      <h1>Audio Dashboard</h1>
+      <h1>Audio Player</h1>
       <Audio/>
     </div>
   );
