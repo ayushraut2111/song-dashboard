@@ -13,3 +13,11 @@ EXPLANATION OF THE PROJECT :-
 6. It also supports deleting the songs from the backend also.
 
 7. For frontend i have used react and then making get and post request with the help of javascript fetch api. 
+
+
+TO FIND THE CODES OF FRONTEND AND BACKEND FOLLOW THESE :-
+
+FOR FRONTEND CODE:- first go to audiofrontend folder and then go to "src" then open "App.js" to get the frontend code
+
+FOR BACKEND CODE :- first open audiobackend folder and then open "audio" folder and in that folder you will get all the backend codes, database models
+are written in models.py and api is written in views.py.
