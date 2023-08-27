@@ -47,7 +47,7 @@ const get=async ()=>{
     setDt(data)    ;
 
   }
-  console.log(dt);
+  console.log(msg);
 
 useEffect(()=>{get()},[]) ;   {/* we have passed get function in the useeffect hook so with the help of this at the time of startup it is fetching all the data initilally */}
 
@@ -68,6 +68,7 @@ return(
         <input type="file" onChange={(e)=>setAud(e.target.files[0])} />    {/* as soon as we upload audio file it saves in aud variable with the help of usestate */}
         <button type='button' onClick={fn}>Add</button>     {/* when we submit the form it is redirecting to function fn */}
       </form>
+      <h4>{msg.msg}</h4>
       </div>
       <div className="songs">
       {

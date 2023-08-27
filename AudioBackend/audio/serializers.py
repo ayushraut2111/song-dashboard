@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from .models import songs
 import mutagen   # importing mutagen to get the size of a audio file
+from rest_framework import serializers
 
 class SongSerializer(ModelSerializer):
     def create(self, validated_data):
@@ -13,3 +14,8 @@ class SongSerializer(ModelSerializer):
     class Meta:
         model=songs
         fields='__all__'
+
+    def validate_audio(self,value):      # validating if the file is not audio type then raise error
+        if value.content_type!="audio/mpeg":
+            raise serializers.ValidationError("file type not audio")
+        return value
