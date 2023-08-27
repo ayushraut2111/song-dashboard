@@ -1,38 +1,64 @@
-.App {
+.heading{
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index:2;
+}
+body{
+  background-color: rgb(214, 207, 207);
+  font-family: cursive;
+  padding: 10px;
+}
+.main{
+  background-color: rgb(121, 175, 214);
+  border-radius: 20px;
+}
+.songcolumn{
+  background-color: pink;
+  padding:5px;
+  border-radius: 20px;
+}
+.songs{
+  padding: 5px;
+  display: grid;
+  gap: 20px 20px;
+  grid-template-columns:repeat(3,1fr);
+  background-color: antiquewhite;
+  border-radius: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.frm{
+  text-align: center;
+  padding: 5px;
+  background-color: rgb(121, 175, 214);
+  border-radius: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+button{
+  border: none;
+  height: 2rem;
+  width: 4rem;
+  border-radius: 8px;
+  color:black;
+  background-color: rgb(242, 196, 128);
+  cursor: pointer;
+}
+.songcolumn button{
+  background-color: rgb(174, 213, 223);
+}
+.songcolumn button:hover{
+  background-color: rgb(126, 226, 226);
+}
+button:hover{
+    background-color: rgb(244, 180, 86);
+}
+.attr{
+  height: 3px;
+}
+audio{
+  margin-top: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

@@ -4,7 +4,7 @@ import {useState,useEffect} from 'react'
 function App() {
   return (
     <div className="App">
-      <h1>Audio Player</h1>
+      <h1 className='heading'>Audio Player</h1>
       <Audio/>
     </div>
   );
@@ -60,30 +60,36 @@ const dlt=async(id)=>{
 
   }
 return(
-    <>
-    <h1>hello</h1>
+    <div className='main'>
     <div className="frm">
+      <h2>Upload a song here</h2>
       {/* using form to take input audio file from user */}
       <form >             
         <input type="file" onChange={(e)=>setAud(e.target.files[0])} />    {/* as soon as we upload audio file it saves in aud variable with the help of usestate */}
         <button type='button' onClick={fn}>Add</button>     {/* when we submit the form it is redirecting to function fn */}
       </form>
+      </div>
+      <div className="songs">
       {
         dt.map((data)=>{
           const {id,name,date,duration,size,extension,audio}=data
           return(
-            <>
-            <h3>{name}   ---  {date}  --  {duration} minutes   ---    {size}mb   ---   {extension}</h3>
+            <div className='songcolumn'>
+            <h4  id='sname' className='attr'>{name}</h4>
+            <h4 className='attr'>Duration:- {duration} minutes</h4>
+            <h4 className='attr'>Size:- {size} mb</h4>
+            <h4 className='attr'>Extension of file:- {extension}</h4>
+            <h4 className='attr'>Date uploaded:- {date}</h4>
             <button type="button" onClick={()=>dlt(id)}>Delete</button>
             <br />
-            <br />
+            {/* <br /> */}
             <audio src={audio} controls/>
-            </>
+            </div>
           );
         })
       }
+      </div>
     </div>
-    </>
   );
 }
 

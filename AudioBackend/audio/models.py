@@ -3,7 +3,6 @@ import os
 from django.dispatch import receiver
 
 
-
 class songs(models.Model):
     name = models.CharField(max_length=100, blank=True, null=True)
     date = models.DateField(auto_now_add=True)
@@ -15,7 +14,9 @@ class songs(models.Model):
     def __str__(self) -> str:
         return self.name
 
-@receiver(models.signals.post_delete, sender=songs)         #this signal will automatically deletes the songs from the local storage also whenever object is deleted from the database
+
+# this signal will automatically deletes the songs from the local storage also whenever object is deleted from the database
+@receiver(models.signals.post_delete, sender=songs)
 def auto_delete_file_on_delete(sender, instance, **kwargs):
     if instance.audio:
         if os.path.isfile(instance.audio.path):
