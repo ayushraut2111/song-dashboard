@@ -18,6 +18,7 @@ class song_api(ModelViewSet):
         if request.FILES['audio'].content_type!="audio/mpeg":   # checking if it is not a audio type then return a warning   
             return Response({"msg":"file is not audio type"})
         countdur=songs.objects.aggregate(Sum('duration')) # get total duration by aggregate propery
+        print(countdur['duration__sum'])
         if countdur['duration__sum'] > 10:    # checking if the length of audio file is greater than 10 minutes or not the return a warning
             return Response({"msg": "Song Uploaded,Total duration of all the songs exceeds 10 minutes"})
         else:
