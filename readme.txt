@@ -1,4 +1,5 @@
 This audio dashboard is made in react and django.
+
 For frontend i have used react and for backend i have used django.
 
 TO RUN THE PROJECT FOLLOW THESE STEPS :-
@@ -20,4 +21,9 @@ TO RUN THE PROJECT FOLLOW THESE STEPS :-
 8. After this your frontend and backend both are started and running
 
 9. To open the audio dashboard go to localhost 3000 and you can get the app.
+
+10. To login in Django admin panel:-
+
+ID="admin"
+password="admin"
 

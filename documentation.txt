@@ -1,0 +1,15 @@
+EXPLANATION OF THE PROJECT :-
+
+1. This is a audio Dashboard made in React and Django. With the help of this dashboard you can upload songs to the backend and also play all the uploaded songs.
+
+2. If the total uploaded songs duration exceeds it will give warning that duration exceeds 10 minutes.
+
+3. User only uploads the audio file and then before saving into database, with the help of backend code it automatically extracts the name,exension,duration,size and then it saves everything in the database.
+
+4. For giving 10 minutes warning i have used orm aggregate and sum function.
+
+5. Backend is also checking if we are trying to upload any other file other than audio file then it is showing warning.
+
+6. It also supports deleting the songs from the backend also.
+
+7. For frontend i have used react and then making get and post request with the help of javascript fetch api. 
